@@ -1,0 +1,165 @@
+
+.App {
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  color: black;
+  font-size: xx-large;
+}
+
+
+section {
+  width: 100%;
+  min-height: 100vh;  
+  padding: 100px 0;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+.parallax {
+  background-attachment: fixed;  
+  background-position: center center;
+  background-size: cover;
+}
+
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 10;
+}
+
+h1 {
+  color: darkgoldenrod;
+  font-size: 2em;
+  z-index: 10; 
+}
+
+
+nav {
+  display: flex;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  background-color: transparent; 
+  padding: 10px 20px;
+  box-shadow: cadetblue;
+  z-index: 10; 
+}
+
+nav a {
+  text-decoration:dotted;
+  color: darkred;
+  font-size: 1.2em;
+}
+
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: darkgoldenrod;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: transparent; 
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+  }
+
+  nav.open {
+    display: flex; 
+  }
+
+  .menu-toggle {
+    display: block; 
+  }
+
+  nav a {
+    font-size: 1.5em;
+    padding: 10px 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+  }
+}
+
+
+header {
+  position: fixed; 
+  width: 100%;
+  background: transparent;
+  padding: 15px 20px;
+  z-index: 100;
+}
+
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+section {
+  scroll-behavior: smooth;
+}
+
